@@ -12,7 +12,7 @@
 with source_data as (
 
     select 1 as id
-    union
+    union all
     select null as id
 
 )
