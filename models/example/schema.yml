@@ -19,3 +19,23 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: stg_product
+      description: "product details table"
+      columns:
+          - name: PRODUCT_CODE
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_customer
+      description: "this is customer details table"
+      columns:
+          - name: CUSTOMER_CODE
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+
