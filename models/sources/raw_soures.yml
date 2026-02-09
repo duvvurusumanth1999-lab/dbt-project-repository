@@ -8,3 +8,7 @@ sources:
       - name: raw_sales
       - name: raw_product
       - name: raw_customer
+      - name: raw_country
+      - name: raw_date
+      - name: raw_store
+      - name: raw_names

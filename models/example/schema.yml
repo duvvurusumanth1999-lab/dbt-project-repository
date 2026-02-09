@@ -38,4 +38,23 @@ models:
                 - unique
                 - not_null
 
+    - name: stg_country
+      columns:
+          - name: country_code
+            tests: 
+                - unique
+                - not_null
 
+    - name: stg_store
+      columns:
+          - name: store_code
+            tests: 
+                - unique
+                - not_null
+
+    - name: stg_date
+      columns:
+          - name: date_id
+            tests: 
+                - unique
+                - not_null
