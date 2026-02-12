@@ -12,3 +12,5 @@ sources:
       - name: raw_date
       - name: raw_store
       - name: raw_names
+      - name: claims_raw
+      - name: policy_holder
