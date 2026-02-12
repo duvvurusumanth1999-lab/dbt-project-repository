@@ -40,3 +40,27 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    staging:
+      +materialized: table
+    Marts:
+      Dimensions:
+        +materialized: table
+        +transient: true
+        +schema: Dim_Mart_schema
+        +database: DBT_DEV_DB
+    
+      Facts:
+        +materialized: table
+        +transient: false
+        +schema: Fact_Mart_schema
+        +database: DBT_DEV_DB
+
+
+
+# dbt_project.yml
+snapshots:
+  +snapshot_meta_column_names:
+      dbt_valid_from: start_date
+      dbt_valid_to: end_date
+      dbt_updated_at: custom_updated_at
+      dbt_scd_id: custom_scd_id

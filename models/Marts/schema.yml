@@ -1,0 +1,78 @@
+
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: my_second_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_product
+      description: "product details table"
+      columns:
+          - name: PRODUCT_CODE
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_customer
+      description: "this is customer details table"
+      columns:
+          - name: CUSTOMER_CODE
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_country
+      columns:
+          - name: country_code
+            tests: 
+                - unique
+                - not_null
+
+    - name: stg_store
+      columns:
+          - name: store_code
+            tests: 
+                - unique
+                - not_null
+
+    - name: stg_date
+      columns:
+          - name: date_id
+            tests: 
+                - unique
+                - not_null
+
+    - name: fact_sales
+      columns:
+          - name: order_id
+            tests: 
+                - unique
+                - not_null
+          - name: product_code
+            tests:
+              - relationships:
+                  to: ref('dim_product')
+                  field: product_code
+
+          - name: customer_code
+            tests:
+              - relationships:
+                  to: ref('dim_customer')
+                  field: customer_code            
